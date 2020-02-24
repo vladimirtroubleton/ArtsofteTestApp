@@ -1,0 +1,79 @@
+﻿@model ArtsofteTestApp.Models.StaffModel
+
+@{
+    ViewData["Title"] = "AddStaffRecord";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+    <head>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="~/js/jquery-ui.css" />
+        <link rel="stylesheet" href="~/js/jquery-ui.min.css" />
+        <link rel="stylesheet" href="~/js/jquery-ui.structure.css" />
+        <link rel="stylesheet" href="~/js/jquery-ui.theme.min.css" />
+    </head>
+
+
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="AddStaffRecord">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label"></label>
+                            <input asp-for="Name" class="form-control" id="search"  />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Surname" class="control-label"></label>
+                            <input asp-for="Surname" class="form-control" />
+                            <span asp-validation-for="Surname" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Age" class="control-label"></label>
+                            <input asp-for="Age" class="form-control" />
+                            <span asp-validation-for="Age" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Gender" class="control-label"></label>
+                            <input asp-for="Gender" class="form-control" />
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+
+                            @Html.DropDownList("DepartamentId", ViewBag.Departaments as SelectList)
+                        </div>
+
+                        <div class="form-group">
+
+                            @Html.DropDownList("LanguageId", ViewBag.ProgLanguages as SelectList)
+
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+             $(document).ready(function () {
+                $('#search').autocomplete({
+                    source: '@Url.Action("AutocompleteSearch")'
+                });
+            })
+        </script>
+
+    </body>
+</html>

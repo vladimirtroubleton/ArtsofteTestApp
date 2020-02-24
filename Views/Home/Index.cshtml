@@ -1,0 +1,34 @@
+﻿@model List<ArtsofteTestApp.ViewModels.StaffViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+    <div class="container-fluid">
+        <div class="row">
+            <a href="/Home/AddStaffRecord" class="btn btn-outline-dark" style="margin-bottom:50px;">Добавить сотрудника</a>
+            <a href="/Home/LookProgLanguages" class="btn btn-outline-dark" style="margin-bottom:50px; margin-left:50px;">Посмотреть информацию о языках</a>
+            <a href="/Home/LookDepartamentsData" class="btn btn-outline-dark" style="margin-bottom:50px; margin-left:50px;">Посмотреть информацию о отделах</a>
+        </div>
+        <table class="text-center table table-bordered">
+            <tr>
+                <td>Имя</td>
+                <td>Фамилия</td>
+                <td>Возраст</td>
+                <td>Пол</td>
+                <td>Отдел</td>
+                <td>Язык программирования</td>
+                <td>Действия</td>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Surname</td>
+                    <td>@item.Age</td>
+                    <td>@item.Gender</td>
+                    <td>@item.DepartamentName</td>
+                    <td>@item.ProgrammingLanguage</td>
+                    <td><a href="/Home/StaffRecordEdit/@item.Id" class="btn btn-outline-dark" style="margin:10px;">Изменить</a><a href="/Home/StaffRecordRemove/@item.Id" class="btn btn-outline-dark">Удалить</a></td>
+                </tr>
+            }
+        </table>
+    </div>

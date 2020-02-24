@@ -1,0 +1,62 @@
+﻿@model ArtsofteTestApp.ViewModels.StaffViewModel
+
+@{
+    ViewData["Title"] = "StaffRecordRemove";
+}
+
+   
+
+    <div class="container">
+
+        <h4>Вы уверенны что хотите удалить данную запись? </h4>
+
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Id)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Surname)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Surname)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Age)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DepartamentName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DepartamentName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ProgrammingLanguage)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ProgrammingLanguage)
+            </dd>
+        </dl>
+
+        <form asp-action="StaffRecordRemove">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-action="Index">Back to List</a>
+        </form>
+    </div>

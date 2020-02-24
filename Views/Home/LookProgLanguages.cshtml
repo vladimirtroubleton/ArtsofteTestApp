@@ -1,0 +1,25 @@
+﻿@model List<ProgrammingLanguageModel>
+@{
+    ViewData["Title"] = "LookProgLanguages";
+}
+
+    <div class="container">
+
+        <div class="row">
+            <a href="/Home/AddLanguageRecord" class="btn btn-outline-dark" style="margin-bottom:50px;">Добавить язык</a>
+            <a href="/Home/Index" class="btn btn-outline-dark" style="margin-bottom:50px;margin-left:50px;">На главную</a>
+        </div>
+
+        <table class="text-center table table-bordered">
+            <tr>
+                <td>Название языка</td>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.LanguageName</td>
+                </tr>
+            }
+        </table>
+    </div>
+

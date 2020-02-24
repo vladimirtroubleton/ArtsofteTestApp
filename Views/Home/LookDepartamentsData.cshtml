@@ -1,0 +1,29 @@
+﻿@model List<DepartmentModel>
+@{
+    ViewData["Title"] = "LookDepartamentsData";
+}
+
+
+
+<div class="container">
+
+    <div class="row">
+        <a href="/Home/AddDepartamentRecord" class="btn btn-outline-dark" style="margin-bottom:50px;">Добавить департамент</a>
+        <a href="/Home/Index" class="btn btn-outline-dark" style="margin-bottom:50px;margin-left:50px;">На главную</a>
+    </div>
+
+    <table class="text-center table table-bordered">
+        <tr>
+            <td>Название отдела</td>
+            <td>Этаж</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DepartamentName</td>
+                <td>@item.DepartamentFloor</td>
+            </tr>
+        }
+    </table>
+</div>
+
